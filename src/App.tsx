@@ -1,29 +1,28 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
 
-import AddBook from './components/add-book.component';
-import Book from './components/book.component';
-import BooksList from './components/books-list.component';
+import TeamView from './components/team-view.component';
+import NewTeam from './components/new-team.component';
+import TeamPreview from './components/team-preview.component';
 
 function App() {
   return (
     <Router>
       <nav>
-        <Link to={'/books'}>
-          bezKoder
+        <Link to={'/'}>
+          TeamsApp
         </Link>
         <div>
           <li>
-            <Link to={'/books'}>
-              Books
+            <Link to={'/teams'}>
+              Teams
             </Link>
           </li>
           <li>
             <Link to={'/add'}>
-              Add
+              Add-Team
             </Link>
           </li>
         </div>
@@ -31,8 +30,8 @@ function App() {
 
       <div>
         <Switch>
-          <Route exact path='/add' component={AddBook}/>
-          <Route path='books/:id' component={Book} />
+          <Route exact path='/add' component={NewTeam}/>
+          <Route path='books/:id' component={TeamView} />
         </Switch>
       </div>
     </Router>
