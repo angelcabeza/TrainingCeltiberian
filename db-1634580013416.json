@@ -103,58 +103,6 @@
       "goalsaganist": 4,
       "points": 12,
       "id": 8
-    },
-    {
-      "name": "Prueba",
-      "logo": "",
-      "rank": 19,
-      "wins": 32,
-      "losses": 2,
-      "ties": 4,
-      "gamesplayed": 38,
-      "goalsfor": 56,
-      "goalsaganist": 21,
-      "points": 97,
-      "id": 9
-    },
-    {
-      "name": "Prueba",
-      "logo": "",
-      "rank": 90,
-      "wins": 53,
-      "losses": 3,
-      "ties": 43,
-      "gamesplayed": 98,
-      "goalsfor": 23,
-      "goalsaganist": 342,
-      "points": 423,
-      "id": 10
-    },
-    {
-      "name": "HolaSoyTonto",
-      "logo": "",
-      "rank": 900,
-      "wins": 12,
-      "losses": 5,
-      "ties": 8,
-      "gamesplayed": 321,
-      "goalsfor": 432,
-      "goalsaganist": 12,
-      "points": 23,
-      "id": 11
-    },
-    {
-      "name": "ASDF",
-      "logo": "",
-      "rank": 123,
-      "wins": 234,
-      "losses": 32,
-      "ties": 34,
-      "gamesplayed": 12,
-      "goalsfor": 34,
-      "goalsaganist": 432,
-      "points": 2134,
-      "id": 12
     }
   ]
 }

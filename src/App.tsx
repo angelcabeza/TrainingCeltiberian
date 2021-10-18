@@ -1,13 +1,28 @@
-import React from 'react';
-import './App.css';
 import "bootstrap/dist/css/bootstrap.min.css";
 import { BrowserRouter as Router, Switch, Route, Link } from 'react-router-dom'
+import { useEffect } from "react";
+import {useDispatch, useSelector} from 'react-redux'
+import { getAllTeams, updateTeam, deleteTeam, createTeam} from './actions/teamActions'
+import { State } from './reducers/rootReducer'
 
 import TeamView from './components/team-view.component';
-import NewTeam from './components/new-team.component';
+import AddTeamContainer from './containers/new-team.container';
 import TeamPreview from './components/team-preview.component';
+import { newTeam } from "./actions/types";
 
 function App() {
+  
+  const dispatch = useDispatch();
+
+  const teams = useSelector((state: State) => state.teams);
+  console.log(teams)
+  useEffect(() => {
+    dispatch(getAllTeams());
+  },[])
+  const onAddTeam = async (team :newTeam) => {
+    dispatch(createTeam(team));
+  }
+
   return (
     <Router>
       <nav>
@@ -28,12 +43,12 @@ function App() {
         </div>
       </nav>
 
-      <div>
         <Switch>
-          <Route exact path='/add' component={NewTeam}/>
+          <Route exact path='/add'> 
+            <AddTeamContainer onAddTeam={onAddTeam} />
+          </Route>
           <Route path='books/:id' component={TeamView} />
         </Switch>
-      </div>
     </Router>
   );
 }

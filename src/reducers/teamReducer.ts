@@ -1,7 +1,8 @@
 import { Action, ActionTypes, State } from '../actions/types'
 
 const initialState: State = {
-    teams: []
+    teams: [],
+    prueba: true
 };
 
 const teamReducer = (state: State = initialState, action: Action) => {
@@ -20,7 +21,7 @@ const teamReducer = (state: State = initialState, action: Action) => {
             return [...state.teams, action.payload];
         
         case ActionTypes.GET_TEAM:
-            return state.teams.map(({id}) => id == action.payload.id);
+            return state.teams.map(({id}) => id === action.payload.id);
 
         case ActionTypes.UPDATE_TEAM:
             return [...state.teams.map((ele) => 

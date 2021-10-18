@@ -27,6 +27,7 @@ export type newTeam = {
 
 export type State = {
     teams: Team[];
+    prueba: boolean;
 }
 
 export enum ActionTypes {
