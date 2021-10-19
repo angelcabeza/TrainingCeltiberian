@@ -7,18 +7,20 @@ import { State } from './reducers/rootReducer'
 
 import TeamView from './components/team-view.component';
 import AddTeamContainer from './containers/new-team.container';
-import TeamPreview from './components/team-preview.component';
+import TeamPreviewContainer from './containers/team-preview.container';
 import { newTeam } from "./actions/types";
 
 function App() {
   
   const dispatch = useDispatch();
+  const teams = useSelector((state: State) => state.teams.teamsVector);
+  console.log("El array de equipos es: ",teams)
 
-  const teams = useSelector((state: State) => state.teams);
-  console.log(teams)
   useEffect(() => {
     dispatch(getAllTeams());
-  },[])
+  },[teams])
+
+
   const onAddTeam = async (team :newTeam) => {
     dispatch(createTeam(team));
   }
@@ -43,7 +45,11 @@ function App() {
         </div>
       </nav>
 
+        
         <Switch>
+          <Route exact path='/'>
+            <TeamPreviewContainer teams={teams} />
+          </Route>
           <Route exact path='/add'> 
             <AddTeamContainer onAddTeam={onAddTeam} />
           </Route>

@@ -2,6 +2,11 @@ import TeamDataService from '../services/teams.service';
 import { Team, newTeam, Action, ActionTypes } from '../actions/types';
 import { Dispatch } from 'redux';
 
+
+export interface State {
+    teamsVector: Team[];
+}
+
 export const createTeam = (team: newTeam) => async (dispatch: Dispatch<Action>) => {
     try {
         const res = await TeamDataService.create(team);
@@ -53,7 +58,7 @@ export const updateTeam = (team: Team) => async (dispatch: Dispatch<Action> ) =>
     }
 }
 
-export const getTeam = (id:string) => async (dispatch: Dispatch<Action> ) => {
+/*export const getTeam = (id:string) => async (dispatch: Dispatch<Action> ) => {
     try {
         const res = await TeamDataService.get(id);
 
@@ -64,7 +69,7 @@ export const getTeam = (id:string) => async (dispatch: Dispatch<Action> ) => {
     } catch (err) {
         console.log(err);
     }
-}
+}*/
 
 export const deleteTeam = (id: number) => async (dispatch: Dispatch<Action> ) => {
     try {
@@ -84,7 +89,8 @@ export const deleteAllTeams = () => async (dispatch: Dispatch<Action> ) => {
         const res = await TeamDataService.deleteAll();
 
         dispatch({
-            type: ActionTypes.DELETE_ALL_TEAMS
+            type: ActionTypes.DELETE_ALL_TEAMS,
+            payload: null
         })
     } catch (err) {
         console.log(err);

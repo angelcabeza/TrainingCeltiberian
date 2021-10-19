@@ -1,4 +1,4 @@
-export type Team = {
+export interface Team {
     id: number;
     name: string;
     logo: string;
@@ -12,7 +12,7 @@ export type Team = {
     points: number;
 }
 
-export type newTeam = {
+export interface newTeam {
     name: string;
     logo: string;
     rank: number;
@@ -23,11 +23,6 @@ export type newTeam = {
     goalsfor: number;
     goalsaganist: number;
     points: number;
-}
-
-export type State = {
-    teams: Team[];
-    prueba: boolean;
 }
 
 export enum ActionTypes {
@@ -49,11 +44,6 @@ interface UpdateTeamAction {
     payload: Team;
 }
 
-interface GetTeamAction {
-    type: ActionTypes.GET_TEAM;
-    payload: Team;
-}
-
 interface GetTeamsAction {
     type: ActionTypes.GET_ALL_TEAMS;
     payload: Team[];
@@ -69,7 +59,6 @@ interface DeleteAllTeamsAction {
 }
 
 export type Action =
-    | GetTeamAction
     | GetTeamsAction
     | UpdateTeamAction
     | DeleteTeamAction
