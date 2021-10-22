@@ -1,0 +1,62 @@
+.customField input {
+    border: none;
+    -webkit-appearance: none;
+    -ms-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    background: #f2f2f2;
+    padding: 12px;
+    border-radius: 3px;
+    width: 250px;
+    border-radius: 3px;
+    outline: none;
+    font-size: 14px;
+}
+
+.customField {
+    position: relative;
+    font-size: 14px;
+    padding-top: 20px;
+    margin-bottom: 5px;
+}
+
+.customField .placeholder {
+    position: absolute;
+    left: 12px;
+    top: calc(50% + 10px);
+    transform: translateY(-50%);
+    color: #aaa;
+    transition:
+        top 0.3s ease,
+        font-size 0.3s ease,
+        color 0.3s ease;
+}
+
+.customField input:valid + .placeholder,
+.customField input:focus + .placeholder {
+    top: 10px;
+    font-size: 10px;
+    color: silver;
+}
+
+div.form{
+    display:block;
+    text-align: center;
+    padding: 20px;
+    margin: 0 auto;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    width: 500px;
+    height: 825px;
+}
+
+form {
+    display: inline-block;
+    margin-left: auto; 
+    margin-right: auto;
+    text-align: center;
+}
+
+h4{
+    color: silver;
+}

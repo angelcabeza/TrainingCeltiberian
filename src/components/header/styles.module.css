@@ -1,0 +1,25 @@
+.titulo{
+    font-family: 'Roboto', sans-serif;
+    font-size: 25px;
+    color: white; 
+    font-weight: 800; 
+}
+
+.h4 {
+    font-family: 'Roboto', sans-serif;
+    font-size: 10px;
+    color:silver;
+    text-align: center;
+}
+
+.links {
+    text-align: justify;
+    color: silver;
+    margin: auto;
+    text-decoration: none;
+}
+
+.color {
+    color: silver;
+    text-decoration: none;
+}

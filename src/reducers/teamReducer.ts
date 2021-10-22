@@ -1,5 +1,4 @@
 import {Action, ActionTypes } from '../actions/types'
-import { Team } from '../actions/types'
 import { State } from '../actions/teamActions'
 import { Reducer } from 'redux'
 
@@ -37,16 +36,6 @@ const teamReducer : Reducer<State,Action> = (state:State = initialState, action:
                 ...state,
                 teamsVector: action.payload
             }
-
-        /*case ActionTypes.UPDATE_TEAM:
-            return {
-                ...state,
-                teamsVector: {
-                    ...state.teamsVector,
-                    [action.payload.id]: action.payload
-                }
-            }*/
-
         default:
             return state;
     }

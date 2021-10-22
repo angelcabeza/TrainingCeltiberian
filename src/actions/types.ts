@@ -28,7 +28,6 @@ export interface newTeam {
 export enum ActionTypes {
     CREATE_TEAM = "CREATE_TEAM",
     UPDATE_TEAM = "UPDATE_TEAM",
-    GET_TEAM = "GET_TEAM",
     GET_ALL_TEAMS = "GET_ALL_TEAMS",
     DELETE_TEAM = "DELETE_TEAM",
     DELETE_ALL_TEAMS = "DELETE_ALL_TEAMS"
@@ -57,6 +56,7 @@ interface DeleteTeamAction {
 interface DeleteAllTeamsAction {
     type: ActionTypes.DELETE_ALL_TEAMS;
 }
+
 
 export type Action =
     | GetTeamsAction

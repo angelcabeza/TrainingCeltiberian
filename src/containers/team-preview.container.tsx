@@ -1,5 +1,5 @@
 import React from 'react'
-import TeamPreview from '../components/team-preview.component'
+import TeamPreview from '../components/teamPreview/team-preview.component'
 import { Team } from '../actions/types'
 
 interface Props {
@@ -13,7 +13,7 @@ const TeamPreviewContainer: React.FC<Props> = (props) => {
     return (
         <>
             {teams.map( (team) => (
-                <TeamPreview name={team.name} logo={team.logo} />
+                <TeamPreview key ={team.name} name={team.name} logo={team.logo} />
             ))}
         </>
     )

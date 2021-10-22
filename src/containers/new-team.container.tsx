@@ -1,6 +1,6 @@
 import React from 'react'
 import { useState } from 'react'
-import NewTeam from '../components/new-team.component'
+import NewTeam from '../components/newTeam/new-team.component'
 import { newTeam } from '../actions/types'
 
 interface Props {
@@ -9,15 +9,15 @@ interface Props {
 
 const AddTeamContainer: React.FC<Props> = (props) => {
     const [name, setName] = useState('');
-    const [rank, setRank] = useState(-1);
-    const [wins, setWins] = useState(-1);
+    const [rank, setRank] = useState(0);
+    const [wins, setWins] = useState(0);
     const [logo, setLogo] = useState('');
-    const [losses, setLoses] = useState(-1);
-    const [ties, setTies] = useState(-1);
-    const [gamesplayed, setGamesPlayed] = useState(-1);
-    const [goalsfor, setGoalsFor] = useState(-1);
-    const [goalsaganist, setGoalsAganist] = useState(-1);
-    const [points, setPoints] = useState(-1)
+    const [losses, setLoses] = useState(0);
+    const [ties, setTies] = useState(0);
+    const [gamesplayed, setGamesPlayed] = useState(0);
+    const [goalsfor, setGoalsFor] = useState(0);
+    const [goalsaganist, setGoalsAganist] = useState(0);
+    const [points, setPoints] = useState(0)
 
     const {onAddTeam} = props;
 

@@ -23,7 +23,6 @@ export const createTeam = (team: newTeam) => async (dispatch: Dispatch<Action>) 
 export const getAllTeams = () => async (dispatch : Dispatch<Action>) => {
     try{
         const res = await TeamDataService.getAll();
-
         dispatch({
             type: ActionTypes.GET_ALL_TEAMS,
             payload: res.data
@@ -58,18 +57,6 @@ export const updateTeam = (team: Team) => async (dispatch: Dispatch<Action> ) =>
     }
 }
 
-/*export const getTeam = (id:string) => async (dispatch: Dispatch<Action> ) => {
-    try {
-        const res = await TeamDataService.get(id);
-
-        dispatch({
-            type: ActionTypes.GET_TEAM,
-            payload: res.data
-        })
-    } catch (err) {
-        console.log(err);
-    }
-}*/
 
 export const deleteTeam = (id: number) => async (dispatch: Dispatch<Action> ) => {
     try {
