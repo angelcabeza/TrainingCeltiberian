@@ -18,3 +18,11 @@
     background-color: #222926;
     color: white;
 }
+
+.trash {
+    color: red;
+    cursor: pointer;
+    position: relative;
+    top: -160px;
+    right: -170px;
+}

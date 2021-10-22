@@ -23,12 +23,9 @@ const teamReducer : Reducer<State,Action> = (state:State = initialState, action:
             };
         
         case ActionTypes.DELETE_TEAM:
-            const cloneBooks = Object.assign({}, state.teamsVector);
-            delete cloneBooks[action.payload]
-
             return {
                 ...state,
-                teamsVector: cloneBooks
+                teamsVector: state.teamsVector.filter((ele) => ele.id !== action.payload)
             }
 
         case ActionTypes.GET_ALL_TEAMS:
