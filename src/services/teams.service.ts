@@ -27,7 +27,7 @@ class TeamDataService {
     }
 
     findByName(name: string){
-        return http.get<Team[]>(`/teams?name_like=${name}`);
+        return http.get<Team[]>(`/teams/?q=${name}`);
     }
 }
 

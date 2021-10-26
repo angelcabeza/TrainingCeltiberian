@@ -10,8 +10,8 @@
     float:left;
     margin: 50px;
     padding: 20px;
-    border-radius: 3px;
-    background-color: #ffffff;    
+    background-color: #ffffff;
+    position: relative;
 }
 
 .div:hover{
@@ -22,7 +22,7 @@
 .trash {
     color: red;
     cursor: pointer;
-    position: relative;
-    top: -160px;
-    right: -170px;
+    position: absolute;
+    top:0;
+    right:0;
 }

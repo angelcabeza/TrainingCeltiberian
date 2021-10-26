@@ -17,6 +17,7 @@ const TeamPreview: React.FC<Props> = (props) => {
     const handleDelete = async () => {
         onDelete(id);
     }
+    
     return (
         <div>
             <div className={`p-3 mb-2 text-black border border-dark ${styles.div}`}>

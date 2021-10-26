@@ -15,11 +15,17 @@
 .links {
     text-align: justify;
     color: silver;
-    margin: auto;
     text-decoration: none;
+    position: relative;
+    left: 50px;
 }
 
 .color {
     color: silver;
     text-decoration: none;
+}
+
+.searchbar{
+    position: relative;
+    left: 800px;
 }

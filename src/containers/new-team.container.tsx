@@ -2,6 +2,7 @@ import React from 'react'
 import { useState } from 'react'
 import NewTeam from '../components/newTeam/new-team.component'
 import { newTeam } from '../actions/types'
+import {useHistory} from 'react-router-dom'
 
 interface Props {
     onAddTeam: (team: newTeam) => Promise<void>;
@@ -18,11 +19,12 @@ const AddTeamContainer: React.FC<Props> = (props) => {
     const [goalsfor, setGoalsFor] = useState(0);
     const [goalsaganist, setGoalsAganist] = useState(0);
     const [points, setPoints] = useState(0)
-
+    const history = useHistory();
     const {onAddTeam} = props;
 
     const handleSubmit = (team: newTeam) => {
         onAddTeam(team);
+        history.push('/')
     };
 
     return (

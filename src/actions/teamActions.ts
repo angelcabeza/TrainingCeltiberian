@@ -5,6 +5,7 @@ import { Dispatch } from 'redux';
 
 export interface State {
     teamsVector: Team[];
+    search: "";
 }
 
 export const createTeam = (team: newTeam) => async (dispatch: Dispatch<Action>) => {
@@ -23,12 +24,26 @@ export const createTeam = (team: newTeam) => async (dispatch: Dispatch<Action>) 
 export const getAllTeams = () => async (dispatch : Dispatch<Action>) => {
     try{
         const res = await TeamDataService.getAll();
+
         dispatch({
             type: ActionTypes.GET_ALL_TEAMS,
             payload: res.data
         });
     } catch (e) {
         console.log(e);
+    }
+}
+
+export const getTeamByName = (name: string) => async (dispatch: Dispatch<Action>) => {
+    try{
+        const res = await TeamDataService.findByName(name)
+
+        dispatch({
+            type: ActionTypes.GET_TEAM_BY_NAME,
+            payload: res.data
+        });
+    } catch (err) {
+        console.log(err);
     }
 }
 

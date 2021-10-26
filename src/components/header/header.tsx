@@ -2,6 +2,9 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import styles from './styles.module.css'
 
+
+
+
 const Header: React.FC = () => {
     return (
         <nav className="navbar navbar-expand bg-dark">
@@ -15,6 +18,8 @@ const Header: React.FC = () => {
                     <span className={styles.color}> Add-Team </span>
                 </Link>
             </div>
+
+            
         </nav>
     );
 }

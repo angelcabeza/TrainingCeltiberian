@@ -14,8 +14,6 @@ const TeamPreviewContainer: React.FC<Props> = (props) => {
     const handleDelete = async(id:number) => {
         await onDelete(id);
     }
-
-    console.log(teams);
     
     return (
         <>

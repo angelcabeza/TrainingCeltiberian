@@ -3,7 +3,8 @@ import { State } from '../actions/teamActions'
 import { Reducer } from 'redux'
 
 const initialState:State = {
-    teamsVector: []
+    teamsVector: [],
+    search: ""
 };
 
 const teamReducer : Reducer<State,Action> = (state:State = initialState, action: Action)  => {
@@ -13,7 +14,7 @@ const teamReducer : Reducer<State,Action> = (state:State = initialState, action:
 
            return {
                 ...state, 
-                teamsVector: {...state.teamsVector,...action.payload}
+                teamsVector: [...state.teamsVector, action.payload]
             } 
 
         case ActionTypes.DELETE_ALL_TEAMS:
@@ -29,6 +30,13 @@ const teamReducer : Reducer<State,Action> = (state:State = initialState, action:
             }
 
         case ActionTypes.GET_ALL_TEAMS:
+            return {
+                ...state,
+                teamsVector: action.payload
+            }
+
+        case ActionTypes.GET_TEAM_BY_NAME:
+            console.log("Get Team: ",action.payload);
             return {
                 ...state,
                 teamsVector: action.payload
