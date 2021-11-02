@@ -71,7 +71,7 @@ const NewTeam: React.FC<Props> = (props) => {
     }
     return (
         <div className={`${style.form} bg-dark`}>
-            <form onSubmit={onSubmit} id="addTeamForm" className={`${style.form} bg-dark`}>
+            <form onSubmit={onSubmit}  id="addTeamForm" className={`${style.form} bg-dark`} data-testid="form">
 
                 <h4> Fill the fields </h4>
 
@@ -231,7 +231,7 @@ const NewTeam: React.FC<Props> = (props) => {
                     </label>
                 </div>
 
-                <button type="submit" id="submitButton" className={'btn btn-primary btm-lg btn.success'}>
+                <button data-testid={"SubmitButton"} type="submit" id="submitButton" className={'btn btn-primary btm-lg btn.success'}>
                     Done
                 </button>
                 

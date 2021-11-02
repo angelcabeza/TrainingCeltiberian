@@ -40,12 +40,12 @@ function App() {
         <Switch>
           <Route exact path='/'>
             <TeamPreviewContainer teams={state.teamsVector} onDelete={onDeleteTeam} />
+            <SearchBarContainer onSearchTeam={onSearchTeam}/>
           </Route>
           <Route exact path='/add'> 
             <AddTeamContainer onAddTeam={onAddTeam} />
           </Route>
         </Switch>
-        <SearchBarContainer onSearchTeam={onSearchTeam}/>
     </Router>
   );
 }
