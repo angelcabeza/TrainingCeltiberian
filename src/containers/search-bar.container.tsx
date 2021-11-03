@@ -3,7 +3,7 @@ import {useState} from 'react'
 import SearchBarComponent from '../components/searchBar/search-bar.component'
 
 interface Props {
-    onSearchTeam: (name:string) => Promise<void>;
+    onSearchTeam: (name:string) => void;
 }
 const SearchBarContainer: React.FC<Props> = (props) => {
     
@@ -12,7 +12,7 @@ const SearchBarContainer: React.FC<Props> = (props) => {
     const {onSearchTeam} = props;
 
     const handleSubmit = async (name:string) => {
-        await onSearchTeam(search);
+        await onSearchTeam(name);
     }
 
     return (

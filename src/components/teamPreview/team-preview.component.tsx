@@ -21,10 +21,10 @@ const TeamPreview: React.FC<Props> = (props) => {
     return (
         <div>
             <div className={`p-3 mb-2 text-black border border-dark ${styles.div}`}>
-                <h1>{name}</h1>
-                <img src={logo} className={styles.img}/>
-                <div className={styles.trash}>
-                    <FaTimes onClick={handleDelete}/>
+                <h1 data-testid="Nombre">{name}</h1>
+                <img src={logo} className={styles.img} data-testid="Imagen"/>
+                <div className={styles.trash} >
+                    <FaTimes onClick={handleDelete} data-testid="DeleteButton"/>
                 </div>
             </div>
         </div>

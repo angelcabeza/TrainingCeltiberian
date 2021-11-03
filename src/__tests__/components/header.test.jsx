@@ -1,6 +1,6 @@
 import React from 'react'
 import { render, screen,fireEvent } from '@testing-library/react'
-import Header from '../components/header/header'
+import Header from '../../components/header/header'
 import userEvent from '@testing-library/user-event'
 import { createMemoryHistory } from 'history';
 import { Router } from 'react-router'
@@ -23,13 +23,23 @@ describe ('header', () => {
         expect(appName).toBeInTheDocument();
         expect(subtitle).toBeInTheDocument();
         expect(addteam).toBeInTheDocument();
+    });
 
-        addteam = getBy
+    test("Clicking on addTeam redirects to the right place", () => {
+        const history = createMemoryHistory();
+
+        render(
+            <Router history={history}>
+                <Header/>
+            </Router>
+        );
+
+        const addteam = screen.queryByTestId("Add-Team");
+
         // Simulating a click on the Add-Team
         fireEvent.click(addteam);
         
-        expect(history.length).toBe(1);
+        expect(history.length).toBe(2);
         expect(history.location.pathname).toBe('/add');
-
-    })
+    });
 });

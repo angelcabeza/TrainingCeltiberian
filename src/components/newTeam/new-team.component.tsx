@@ -81,6 +81,7 @@ const NewTeam: React.FC<Props> = (props) => {
                             type="text" 
                             id="nombre" 
                             name="nombre" 
+                            data-testid="nameInput"
                             value={name}
                             onChange={(target) => setName(target.currentTarget.value)}
                             className={style.input}
@@ -97,6 +98,7 @@ const NewTeam: React.FC<Props> = (props) => {
                             type="number" 
                             id="wins" 
                             name="wins"
+                            data-testid="winsInput"
                             value={wins}
                             onChange={(target) => setWins(target.currentTarget.valueAsNumber)}
                             className={style.input}
@@ -113,6 +115,7 @@ const NewTeam: React.FC<Props> = (props) => {
                             type="number" 
                             id="defeats" 
                             name="defeats"
+                            data-testid="defeatsInput"
                             value={losses}
                             onChange={(target) => setLoses(target.currentTarget.valueAsNumber)}
                             className={style.input}
@@ -129,6 +132,7 @@ const NewTeam: React.FC<Props> = (props) => {
                             type="number" 
                             id="draws" 
                             name="draws"
+                            data-testid="drawsInput"
                             value={ties}
                             onChange={(target) => setTies(target.currentTarget.valueAsNumber)} 
                             className={style.input}
@@ -145,6 +149,7 @@ const NewTeam: React.FC<Props> = (props) => {
                             type="number" 
                             id="gp" 
                             name="gp" 
+                            data-testid="gpInput"
                             value={gamesplayed}
                             onChange={(target) => setGamesPlayed(target.currentTarget.valueAsNumber)}
                             className={style.input}
@@ -161,6 +166,7 @@ const NewTeam: React.FC<Props> = (props) => {
                             type="number" 
                             id="gf" 
                             name="gf"
+                            data-testid="gfInput"
                             value={goalsfor}
                             onChange={(target) => setGoalsFor(target.currentTarget.valueAsNumber)}
                             className={style.input}
@@ -176,6 +182,7 @@ const NewTeam: React.FC<Props> = (props) => {
                             type="number" 
                             id="ga" 
                             name="ga"
+                            data-testid="gaInput"
                             value={goalsaganist}
                             onChange={(target) => setGoalsAganist(target.currentTarget.valueAsNumber)}
                             className={style.input}
@@ -192,6 +199,7 @@ const NewTeam: React.FC<Props> = (props) => {
                             type="number" 
                             id="points" 
                             name="points"
+                            data-testid="pointsInput"
                             value={points}
                             onChange={(target) => setPoints(target.currentTarget.valueAsNumber)} 
                             className={style.input}
@@ -208,6 +216,7 @@ const NewTeam: React.FC<Props> = (props) => {
                             type="number" 
                             id="rank" 
                             name="rank"
+                            data-testid="rankInput"
                             value={rank}
                             onChange={(target) => setRank(target.currentTarget.valueAsNumber)}
                             className={style.input}
@@ -222,6 +231,7 @@ const NewTeam: React.FC<Props> = (props) => {
                             type="url" 
                             id="logo" 
                             name="logo"
+                            data-testid="logoInput"
                             value={logo}
                             onChange={(target) => setLogo(target.currentTarget.value)}
                             className={style.input}

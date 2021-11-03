@@ -17,16 +17,17 @@ const SearchBarComponent: React.FC<Props> = (props) => {
     }
 
     return (
-        <form id={"formSearch"}onSubmit={onSubmit} >
+        <form id={"formSearch"}onSubmit={onSubmit} data-testid="SearchForm">
             <input 
-                type="text" 
+                type="text"
+                name="searchInput"
+                data-testid="Input"
                 placeholder="Search a team..." 
                 className={` ${styles.searchInput}`}
                 onChange={(target) => setValue(target.currentTarget.value)}
-                aria-label="Search"
             />
 
-            <button type="submit" id="submitButton" className={`${styles.searchButton}`}>
+            <button type="submit" id="submitButton" className={`${styles.searchButton}`} data-testid="Button">
                  Search
             </button>
         </form>  
