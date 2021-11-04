@@ -1,15 +1,16 @@
 .img {
-    width: 25%;
-    height: 25%;
+    width: 15vh;
+    height: fit-content;
+    object-fit: cover;
 }
 
 .div {
-    width: 25%;
-    height: 25%;
+    width: 50vh;
+    height: 25vh;
     text-align: center;
     float:left;
     margin: 50px;
-    padding: 20px;
+    padding: 10px;
     background-color: #ffffff;
     position: relative;
 }

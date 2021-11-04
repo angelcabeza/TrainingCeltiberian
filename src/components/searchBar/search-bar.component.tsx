@@ -16,8 +16,8 @@ const SearchBarComponent: React.FC<Props> = (props) => {
         handleSubmit(value);
     }
 
-    return (
-        <form id={"formSearch"}onSubmit={onSubmit} data-testid="SearchForm">
+    return (        
+        <form id={"formSearch"} onSubmit={onSubmit} data-testid="SearchForm">
             <input 
                 type="text"
                 name="searchInput"
@@ -30,7 +30,7 @@ const SearchBarComponent: React.FC<Props> = (props) => {
             <button type="submit" id="submitButton" className={`${styles.searchButton}`} data-testid="Button">
                  Search
             </button>
-        </form>  
+        </form>
     )
 }
 

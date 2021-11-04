@@ -3,8 +3,7 @@ import { State } from '../actions/teamActions'
 import { Reducer } from 'redux'
 
 const initialState:State = {
-    teamsVector: [],
-    search: ""
+    teamsVector: []
 };
 
 const teamReducer : Reducer<State,Action> = (state:State = initialState, action: Action)  => {

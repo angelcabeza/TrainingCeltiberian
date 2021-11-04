@@ -5,7 +5,6 @@ import { Dispatch } from 'redux';
 
 export interface State {
     teamsVector: Team[];
-    search: "";
 }
 
 export const createTeam = (team: newTeam) => async (dispatch: Dispatch<Action>) => {

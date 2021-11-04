@@ -2,6 +2,10 @@ import React from 'react'
 import { Team } from '../../actions/types'
 import styles from './styles.module.css'
 import { FaTimes } from 'react-icons/fa'
+import Col from 'react-bootstrap/Col'
+import Row from 'react-bootstrap/Row'
+import Image from 'react-bootstrap/Image'
+
 
 export interface Props {
     name: string;
@@ -19,15 +23,15 @@ const TeamPreview: React.FC<Props> = (props) => {
     }
     
     return (
-        <div>
-            <div className={`p-3 mb-2 text-black border border-dark ${styles.div}`}>
-                <h1 data-testid="Nombre">{name}</h1>
-                <img src={logo} className={styles.img} data-testid="Imagen"/>
-                <div className={styles.trash} >
-                    <FaTimes onClick={handleDelete} data-testid="DeleteButton"/>
-                </div>
+        <Col lg={true}>
+            <div className={`p3 border border-dark ${styles.div}`}>
+                    <h1 data-testid="Nombre" className={`text-black`}>{name}</h1>
+                    <Image src={logo} fluid className="w-25" data-testid="Imagen"/>
+                    <div className={styles.trash} >
+                        <FaTimes onClick={handleDelete} data-testid="DeleteButton"/>
+                    </div>
             </div>
-        </div>
+        </Col>
     );
 }
 

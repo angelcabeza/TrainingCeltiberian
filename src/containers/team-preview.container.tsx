@@ -1,25 +1,24 @@
 import React from 'react'
 import TeamPreview from '../components/teamPreview/team-preview.component'
 import { Team } from '../actions/types'
+import {deleteTeam} from '../actions/teamActions'
+import {useSelector,useDispatch} from 'react-redux';
+import {State} from '../reducers/rootReducer'
 
-interface Props {
-    teams: Team[];
-    onDelete: (id:number) => Promise<void>;
-}
+const TeamPreviewContainer: React.FC = () => {
 
-const TeamPreviewContainer: React.FC<Props> = (props) => {
+    const dispatch = useDispatch();
+    const teams = useSelector((state: State) => state.teams.teamsVector)
 
-    const {teams, onDelete} = props;
-
-    const handleDelete = async(id:number) => {
-        await onDelete(id);
+    const handleDelete = async (id: number) => {
+        dispatch(deleteTeam(id));
     }
     
     return (
         <>
             {teams.map( (team) => (
-                <TeamPreview key ={team.id} name={team.name}
-                logo={team.logo} id={team.id} onDelete={handleDelete}/>               
+                    <TeamPreview key ={team.id} name={team.name}
+                    logo={team.logo} id={team.id} onDelete={handleDelete}/> 
             ))}
         </>
     )

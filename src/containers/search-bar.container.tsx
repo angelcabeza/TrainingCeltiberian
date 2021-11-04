@@ -1,18 +1,16 @@
 import React from 'react'
 import {useState} from 'react'
 import SearchBarComponent from '../components/searchBar/search-bar.component'
+import { useDispatch } from 'react-redux'
+import { getTeamByName } from '../actions/teamActions'
 
-interface Props {
-    onSearchTeam: (name:string) => void;
-}
-const SearchBarContainer: React.FC<Props> = (props) => {
+const SearchBarContainer: React.FC = () => {
     
     const [search, setSearch] = useState('');
-
-    const {onSearchTeam} = props;
+    const dispatch = useDispatch();
 
     const handleSubmit = async (name:string) => {
-        await onSearchTeam(name);
+        dispatch(getTeamByName(name));
     }
 
     return (

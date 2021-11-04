@@ -3,12 +3,10 @@ import { useState } from 'react'
 import NewTeam from '../components/newTeam/new-team.component'
 import { newTeam } from '../actions/types'
 import {useHistory} from 'react-router-dom'
+import { useDispatch } from 'react-redux'
+import { createTeam } from '../actions/teamActions'
 
-interface Props {
-    onAddTeam: (team: newTeam) => Promise<void>;
-}
-
-const AddTeamContainer: React.FC<Props> = (props) => {
+const AddTeamContainer: React.FC = () => {
     const [name, setName] = useState('');
     const [rank, setRank] = useState(0);
     const [wins, setWins] = useState(0);
@@ -20,10 +18,10 @@ const AddTeamContainer: React.FC<Props> = (props) => {
     const [goalsaganist, setGoalsAganist] = useState(0);
     const [points, setPoints] = useState(0)
     const history = useHistory();
-    const {onAddTeam} = props;
+    const dispatch = useDispatch();
 
     const handleSubmit = (team: newTeam) => {
-        onAddTeam(team);
+        dispatch(createTeam(team));
         history.push('/')
     };
 
