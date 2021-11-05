@@ -35,7 +35,6 @@ const teamReducer : Reducer<State,Action> = (state:State = initialState, action:
             }
 
         case ActionTypes.GET_TEAM_BY_NAME:
-            console.log("Get Team: ",action.payload);
             return {
                 ...state,
                 teamsVector: action.payload

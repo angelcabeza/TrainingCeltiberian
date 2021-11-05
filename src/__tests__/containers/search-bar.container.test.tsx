@@ -9,9 +9,7 @@ describe("SearchBarContainer", () => {
 
     beforeEach( () => {
         render (
-            <SearchBarContainer
-                onSearchTeam={onSearchTeam}
-            />
+            <SearchBarContainer/>
         );
     });
 
