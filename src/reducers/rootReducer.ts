@@ -2,7 +2,7 @@ import {combineReducers} from 'redux'
 import teamReducer from '../reducers/teamReducer'
 
 const rootReducer = combineReducers({
-    teams: teamReducer
+    teams: teamReducer,
 });
 
 export default rootReducer;

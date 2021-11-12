@@ -1,5 +1,7 @@
+import {ObjectId} from 'bson'
+
 export interface Team {
-    id: number;
+    _id: ObjectId;
     name: string;
     logo: string;
     rank: number;
@@ -23,6 +25,15 @@ export interface newTeam {
     goalsfor: number;
     goalsaganist: number;
     points: number;
+}
+
+export interface AuthState {
+    token: string;
+    username: string;
+    isAuthenticated: boolean;
+    isLoading: boolean;
+    error: boolean;
+    msg: string;
 }
 
 export enum ActionTypes {
@@ -51,7 +62,7 @@ interface GetTeamsAction {
 
 interface DeleteTeamAction {
     type: ActionTypes.DELETE_TEAM;
-    payload: number;
+    payload: ObjectId;
 }
 
 interface DeleteAllTeamsAction {

@@ -1,6 +1,7 @@
 import TeamDataService from '../services/teams.service';
 import { Team, newTeam, Action, ActionTypes } from '../actions/types';
 import { Dispatch } from 'redux';
+import {ObjectId} from 'bson'
 
 
 export interface State {
@@ -46,33 +47,8 @@ export const getTeamByName = (name: string) => async (dispatch: Dispatch<Action>
     }
 }
 
-export const updateTeam = (team: Team) => async (dispatch: Dispatch<Action> ) => {
-    try {
-        const res = await TeamDataService.update(team,team.id);
 
-        dispatch({
-            type: ActionTypes.UPDATE_TEAM,
-            payload: {
-                id: team.id,
-                points: team.points,
-                rank: team.rank,
-                logo: team.logo,
-                name: team.name,
-                wins: team.wins,
-                losses: team.losses,
-                ties: team.ties,
-                gamesplayed: team.gamesplayed,
-                goalsaganist: team.goalsaganist,
-                goalsfor: team.goalsfor
-            }
-        });
-    } catch (err){
-        console.log(err);
-    }
-}
-
-
-export const deleteTeam = (id: number) => async (dispatch: Dispatch<Action> ) => {
+export const deleteTeam = (id: ObjectId) => async (dispatch: Dispatch<Action> ) => {
     try {
         const res = await TeamDataService.delete(id);
 

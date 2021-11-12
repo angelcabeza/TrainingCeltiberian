@@ -1,29 +1,31 @@
 import { Team, newTeam } from "../actions/types"
 import http from "../http-common"
+import {ObjectId} from 'bson'
 
 class TeamDataService {
     getAll() {
-        return http.get<Team[]>('/teams?_sort=id&_order=asc')
+        return http.get<Team[]>('/api/teams?_sort=id&_order=asc')
     }
 
     get(id:number | string) {
-        return http.get<Team>(`/teams/${id}`);
+        return http.get<Team>(`/api/teams/${id}`);
     }
 
     create(data: newTeam){
-        return http.post<Team>("/teams",data);
+        console.log("Aniado equipo")
+        return http.post<Team>("/api/teams/add",data);
     }
 
     update(data: Team, id: number | string){
-        return http.put(`/teams/${id}`, data);
+        return http.put(`/api/teams/${id}`, data);
     }
 
-    delete(id:number | string){
-        return http.delete(`/teams/${id}`);
+    delete(id: ObjectId){
+        return http.delete(`/api/teams/${id}`);
     }
 
     deleteAll(){
-        return http.delete('/teams');
+        return http.delete('/api/teams');
     }
 
     findByName(name: string){

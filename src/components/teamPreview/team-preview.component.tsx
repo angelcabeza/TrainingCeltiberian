@@ -5,21 +5,21 @@ import { FaTimes } from 'react-icons/fa'
 import Col from 'react-bootstrap/Col'
 import Row from 'react-bootstrap/Row'
 import Image from 'react-bootstrap/Image'
-
+import {ObjectId} from 'bson'
 
 export interface Props {
     name: string;
     logo: string;
-    id: number;
-    onDelete: (id: number) => Promise<void>;
+    _id: ObjectId;
+    onDelete: (_id: ObjectId) => Promise<void>;
 }
 
 const TeamPreview: React.FC<Props> = (props) => {
 
-    const { name,logo, onDelete,id } = props;
+    const { name,logo, onDelete,_id } = props;
 
     const handleDelete = async () => {
-        onDelete(id);
+        onDelete(_id);
     }
     
     return (
