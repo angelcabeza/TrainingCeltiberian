@@ -81,3 +81,43 @@ export type Action =
     | DeleteAllTeamsAction
     | GetTeamByName
     | CreateTeamAction;
+
+
+export enum AuthTypes {
+    LOGIN_SUCCESS = "LOGIN_SUCCESS",
+    REGISTER_SUCCESS = "REGISTER_SUCCESS",
+    LOGIN_ERROR = "LOGIN_ERROR",
+    REGISTER_ERROR = "REGISTER_ERROR",
+    LOGIN_LOADING = "LOGIN_LOADING"
+}
+
+interface LoginSuccessAction {
+    type: AuthTypes.LOGIN_LOADING;
+}
+
+interface RegisterSuccessAction {
+    type: AuthTypes.REGISTER_SUCCESS;
+    payload: string;
+}
+
+interface RegisterErrorAction {
+    type: AuthTypes.REGISTER_ERROR;
+    payload: string;
+}
+
+interface LoginErrorAction {
+    type: AuthTypes.LOGIN_ERROR;
+    payload: string;
+}
+
+interface CheckToken {
+    type: AuthTypes.LOGIN_SUCCESS;
+    payload: {username: string; token: string};
+}
+
+export type AuthAction =
+    | LoginSuccessAction
+    | RegisterSuccessAction
+    | LoginErrorAction
+    | RegisterErrorAction
+    | CheckToken;

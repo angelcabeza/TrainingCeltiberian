@@ -23,7 +23,7 @@ const AddTeamContainer: React.FC = () => {
 
     const handleSubmit = (team: newTeam) => {
         dispatch(createTeam(team));
-        history.push('/teams')
+        history.push('/')
     };
 
     return (

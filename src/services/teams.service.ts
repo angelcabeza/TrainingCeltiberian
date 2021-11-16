@@ -2,9 +2,15 @@ import { Team, newTeam } from "../actions/types"
 import http from "../http-common"
 import {ObjectId} from 'bson'
 
+const token = localStorage.getItem('token');
+
 class TeamDataService {
     getAll() {
-        return http.get<Team[]>('/api/teams?_sort=id&_order=asc')
+        return http.get<Team[]>('/api/teams?_sort=id&_order=asc',{
+            headers: {
+                Authorization: 'Bearer ' + token
+            }
+        })
     }
 
     get(id:number | string) {
@@ -12,16 +18,28 @@ class TeamDataService {
     }
 
     create(data: newTeam){
-        console.log("Aniado equipo")
-        return http.post<Team>("/api/teams/add",data);
+        return http.post<Team>("/api/teams/add", data,{
+            headers: {
+                Authorization: 'Bearer ' + token
+            }
+        });
     }
 
     update(data: Team, id: number | string){
-        return http.put(`/api/teams/${id}`, data);
+        return http.put(`/api/teams/${id}`,{
+            headers: {
+                Authorization: 'Bearer ' + token
+            },
+            data: data
+        });
     }
 
     delete(id: ObjectId){
-        return http.delete(`/api/teams/${id}`);
+        return http.delete(`/api/teams/${id}`,{
+            headers: {
+                Authorization: 'Bearer ' + token
+            }
+        });
     }
 
     deleteAll(){
@@ -29,7 +47,7 @@ class TeamDataService {
     }
 
     findByName(name: string){
-        return http.get<Team[]>(`/teams/?q=${name}`);
+        return http.get<Team[]>(`/teams/${name}`);
     }
 }
 

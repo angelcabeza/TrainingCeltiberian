@@ -12,15 +12,15 @@ const Header: React.FC = () => {
     return (
         <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
             <Container>
-                <Navbar.Brand href="/teams">FootApp</Navbar.Brand>
+                <Navbar.Brand href="/">FootApp</Navbar.Brand>
                 <Navbar.Toggle aria-controls="responsive-navbar-nav" />
                 <Navbar.Collapse id="responsive-navbar-nav">
                     <Nav className="me-auto">
-                        <Nav.Link href="/teams/add">Add-Team</Nav.Link>
+                        <Link to="/teams/add" className="text-decoration-none">Add-Team</Link>
                     </Nav>
-                    <Nav>
+                    <Nav.Item>
                         <SearchBarContainer/>
-                    </Nav>
+                    </Nav.Item>
                 </Navbar.Collapse>
             </Container>
 </Navbar>
