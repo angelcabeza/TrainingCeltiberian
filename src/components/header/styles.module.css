@@ -15,9 +15,12 @@
 .links {
     text-align: justify;
     color: silver;
-    text-decoration: none;
-    position: relative;
-    left: 50px;
+    text-decoration: none !important;
+}
+
+.links:hover{
+    text-decoration: none !important;
+    color: silver;
 }
 
 .color {
@@ -25,7 +28,11 @@
     text-decoration: none;
 }
 
+.addteam{
+    position: relative;
+    left: 50px;
+}
 .searchbar{
     position: relative;
-    left: 800px;
+    left: 50px;
 }

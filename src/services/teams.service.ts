@@ -47,7 +47,11 @@ class TeamDataService {
     }
 
     findByName(name: string){
-        return http.get<Team[]>(`/teams/${name}`);
+        return http.get<Team[]>(`/api/teams/${name}`, {
+            headers: {
+                Authorization: 'Bearer ' + token
+            }
+        });
     }
 }
 

@@ -16,7 +16,8 @@ const RegisterContainer: React.FC = () => {
 
     const handleSubmit = async (e: React.FormEvent) => {
         e.preventDefault();
-        dispatch(register(userName,password));        
+        dispatch(register(userName,password));    
+        history.push('/');    
     }
 
     return (

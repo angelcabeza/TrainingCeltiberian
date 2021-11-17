@@ -19,13 +19,15 @@ const authReducer : Reducer<AuthState,AuthAction> = (state:AuthState = initialSt
                 token: action.payload.token,
                 username: action.payload.username,
                 msg: 'Sesion iniciada',
-                isAuth: true
+                isAuth: true,
+                error: false
             };
         
         case AuthTypes.REGISTER_SUCCESS:
             return{
                 ...state,
-                msg: action.payload
+                msg: action.payload,
+                error: false
             };
         
         case AuthTypes.LOGIN_ERROR:
